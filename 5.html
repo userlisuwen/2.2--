@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="./55.js"></script>
+<script>
+        //扁平数据结构
+        let houData = [
+            { id: 1, name: '部门1', pid: 0 },
+            { id: 2, name: '部门2', pid: 1 },
+            { id: 3, name: '部门3', pid: 1 },
+            { id: 4, name: '部门4', pid: 3 },
+            { id: 5, name: '部门5', pid: 4 },
+        ]
+        let TreeData = GetTreeData(houData);
+        console.log(TreeData);
+
+        //树型结构
+        let arr = [{
+            "children": [{
+                "children": [{
+                    "id": 1036529,
+                    "label": "处方猫粮",
+                    "value": "C_1036529"
+                },
+                    {
+                        "id": 1036528,
+                        "label": "国产猫粮",
+                        "value": "C_1036528"
+                    },
+                    {
+                        "children": [{
+                            "id": 1236773,
+                            "label": "比利时原装进口 欧帝亿IMPERIAL PAW 鸡肉幼猫猫粮 7.5kg",
+                            "value": "G_1236773"
+                        }],
+                        "id": 1036527,
+                        "label": "进口猫粮",
+                        "value": "C_1036527"
+                    }
+                ],
+                "id": 1036526,
+                "label": "猫粮",
+                "value": "C_1036526"
+            }],
+            "id": 1036518,
+            "label": "猫猫",
+            "value": "C_1036518"
+        },
+            {
+                "id": 1036537,
+                "label": "111",
+                "value": "C_1036537"
+            },
+            {
+                "children": [{
+                    "children": [{
+                        "children": [{
+                            "id": 1236777,
+                            "label": "unimall商业永久授权",
+                            "value": "G_1236777"
+                        }],
+                        "id": 1036536,
+                        "label": "永久授权",
+                        "value": "C_1036536"
+                    }],
+                    "id": 1036535,
+                    "label": "商业授权",
+                    "value": "C_1036535"
+                }],
+                "id": 1036534,
+                "label": "授权",
+                "value": "C_1036534"
+            },
+            {
+                "children": [{
+                    "children": [{
+                        "children": [{
+                            "id": 1236776,
+                            "label": "乐优派 猫砂盆清理用具 4件套",
+                            "value": "G_1236776"
+                        }],
+                        "id": 1036532,
+                        "label": "厕所",
+                        "value": "C_1036532"
+                    },
+                        {
+                            "children": [{
+                                "id": 1236775,
+                                "label": "俏尾巴SmartTail LOVECAT同厂 环保2.0小颗粒豆腐猫砂 原味 2.5kg",
+                                "value": "G_1236775"
+                            }],
+                            "id": 1036533,
+                            "label": "猫砂",
+                            "value": "C_1036533"
+                        }
+                    ],
+                    "id": 1036531,
+                    "label": "猫猫",
+                    "value": "C_1036531"
+                }],
+                "id": 1036530,
+                "label": "清洁",
+                "value": "C_1036530"
+            },
+            {
+                "children": [{
+                    "id": 1036543,
+                    "label": "狗粮",
+                    "value": "C_1036543"
+                },
+                    {
+                        "children": [{
+                            "children": [{
+                                "id": 1236771,
+                                "label": "昵趣NaTruse 山羊奶配方狗狗洁齿骨 盒装20g*40支",
+                                "value": "G_1236771"
+                            }],
+                            "id": 1036525,
+                            "label": "磨牙零食",
+                            "value": "C_1036525"
+                        },
+                            {
+                                "children": [{
+                                    "id": 1236780,
+                                    "label": "美年达汽水600ml",
+                                    "value": "G_1236780"
+                                },
+                                    {
+                                        "id": 1236789,
+                                        "label": "正宗咪咪虾条18g",
+                                        "value": "G_1236789"
+                                    },
+                                    {
+                                        "id": 1236788,
+                                        "label": "伊利营养舒化(全脂奶）250ml",
+                                        "value": "G_1236788"
+                                    },
+                                    {
+                                        "id": 1236787,
+                                        "label": "美汁源果粒橙450ml",
+                                        "value": "G_1236787"
+                                    },
+                                    {
+                                        "id": 1236786,
+                                        "label": "水动乐桃味600ml",
+                                        "value": "G_1236786"
+                                    },
+                                    {
+                                        "id": 1236785,
+                                        "label": "纯悦水",
+                                        "value": "G_1236785"
+                                    },
+                                    {
+                                        "id": 1236784,
+                                        "label": "天友核桃花生奶200ml",
+                                        "value": "G_1236784"
+                                    },
+                                    {
+                                        "id": 1236783,
+                                        "label": "旺旺牛奶糖",
+                                        "value": "G_1236783"
+                                    },
+                                    {
+                                        "id": 1236782,
+                                        "label": "口水娃兰花豆（酱汁牛肉味）",
+                                        "value": "G_1236782"
+                                    },
+                                    {
+                                        "id": 1236781,
+                                        "label": "美莲达西瓜味600ml",
+                                        "value": "G_1236781"
+                                    },
+                                    {
+                                        "id": 1236779,
+                                        "label": "小猪佩奇草莓味豆奶125ml",
+                                        "value": "G_1236779"
+                                    },
+                                    {
+                                        "id": 1236772,
+                                        "label": "路斯 手工坊系列 香薰牛肉丁 200g",
+                                        "value": "G_1236772"
+                                    }
+                                ],
+                                "id": 1036524,
+                                "label": "肉类零食",
+                                "value": "C_1036524"
+                            }
+                        ],
+                        "id": 1036523,
+                        "label": "零食",
+                        "value": "C_1036523"
+                    },
+                    {
+                        "id": 1036542,
+                        "label": "狗粮",
+                        "value": "C_1036542"
+                    },
+                    {
+                        "id": 1036541,
+                        "label": "狗粮",
+                        "value": "C_1036541"
+                    },
+                    {
+                        "id": 1036540,
+                        "label": "狗粮",
+                        "value": "C_1036540"
+                    },
+                    {
+                        "id": 1036539,
+                        "label": "狗粮",
+                        "value": "C_1036539"
+                    },
+                    {
+                        "id": 1036538,
+                        "label": "狗粮狗粮狗粮狗粮狗粮",
+                        "value": "C_1036538"
+                    },
+                    {
+                        "children": [{
+                            "children": [{
+                                "id": 1236770,
+                                "label": "宠儿香 家庭专用系列 美健膳食罐头 90g",
+                                "value": "G_1236770"
+                            }],
+                            "id": 1036521,
+                            "label": "国产狗粮",
+                            "value": "C_1036521"
+                        },
+                            {
+                                "children": [{
+                                    "id": 1236769,
+                                    "label": "耐吉斯SOLUTION 比利时版 鸡肉+三文鱼配方奶糕粮 18磅/8.16kg",
+                                    "value": "G_1236769"
+                                },
+                                    {
+                                        "id": 1236768,
+                                        "label": "澳大利亚丝倍亮Supercoat 小型犬幼年期全价犬粮 1.5kg",
+                                        "value": "G_1236768"
+                                    }
+                                ],
+                                "id": 1036520,
+                                "label": "进口狗粮",
+                                "value": "C_1036520"
+                            },
+                            {
+                                "id": 1036522,
+                                "label": "处方狗粮",
+                                "value": "C_1036522"
+                            }
+                        ],
+                        "id": 1036519,
+                        "label": "狗粮",
+                        "value": "C_1036519"
+                    }
+                ],
+                "id": 1036517,
+                "label": "狗狗",
+                "value": "C_1036517"
+            }
+        ]
+        console.log(arr)
+
+</script>
+</body>
+
+</html>
